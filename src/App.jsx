@@ -17,7 +17,14 @@ function App() {
   }, [input.currency]);
 
   useEffect(()=> {
-    if (input.search) setFilteredCoins(coins.filter(coin => coin.name.includes(input.search) || coin.symbol.includes(input.search) ))
+    if (input.search) 
+      setFilteredCoins(
+        coins.filter(
+          coin => 
+            coin.name.toLowerCase().includes(input.search.toLowerCase()) 
+            || 
+            coin.symbol.toLowerCase().includes(input.search.toLowerCase()) 
+        ))
     else setFilteredCoins(coins)
   },[coins, input])
   
@@ -32,10 +39,11 @@ function App() {
             {filteredCoins.map(coin => <Coin key={coin.id} coin={coin}/> )}
           </div>
         </div> 
-      ) : (<div className="mt-5 fs-2 d-flex-center text-white">Loading...</div>) }
+      ) : <></> }
            
     </div>
   );
 }
 
 export default App;
+// (<div className="mt-5 fs-2 d-flex-center text-white">Loading...</div>)

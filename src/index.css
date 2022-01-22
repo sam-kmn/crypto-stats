@@ -5,7 +5,11 @@ body {
 }
 
 html, body{
-  background: rgb(133, 130, 130) !important;
+  background: rgb(218, 236, 218) !important;
+}
+
+*:focus{
+  outline: none;
 }
 
 .d-flex-center{
@@ -33,8 +37,8 @@ html, body{
   color: white;
   
 }
-#Navbar-inputs input::placeholder {
-  color: white;
+#Navbar-inputs input::placeholder, select {
+  color: rgba(255, 255, 255, 0.7);
   opacity: 1; /* Firefox */
 }
 
@@ -43,5 +47,5 @@ html, body{
   background: rgba(128, 128, 128, 0.5);
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 0 .5rem .5rem 0;
-  color: white;
+  /* color: white; */
 }
